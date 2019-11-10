@@ -1,5 +1,7 @@
 -------------
 Nexus Setup
+
+https://devopscube.com/how-to-install-latest-sonatype-nexus-3-on-linux/
 -------------
 Sudo su
 1. yum update -y
