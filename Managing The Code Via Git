@@ -1,0 +1,30 @@
+Step 1 : Managing The Code Via Git : 
+This is the basic step which I believe everyone managing a project must know . 
+I believe when creating a project we must immediately create two branches.
+
+a) A master branch : This branch will have all the production ready code
+b) A development branch : This branch will contain your local development branch
+And If a client is involved we must create a third branch also
+c) A uat branch : This branch is a pre-prod branch which is also hosted on our development server 
+and we may host it on the development server on a different ports.
+
+Q. Why we require the uat branch ?
+Ans. Your client before exposing any feature want to take the feature to a final test and that cannot be done in your live or production code , 
+so this uat environment or pre-prod environment can be used to test the code which will be soon be live and it will not contain all the features in your development version , 
+so just to keep a clean separation between development phase, the go-live and the actual live phase , so it’s always better to have this branch
+The way I believe code should be moved is like this
+Development branch → UAT branch → Master Branch
+If you need to do some hot fixes you can always do it in UAT Branch and move it to master branch , but never should changes be made in master branch , 
+because it is the clear and clean code that is getting deployed so keep it clean and production ready
+And always before production movement when you are in the go-live phase after you get a signoff from client create a git tag of the particular UAT
+git tag -a v<your_version> -m "<signed of functionalites>"
+push git push origin <current-tag>
+if you want to create a hotfix in the functionality then git checkout -b uat_hotfix_tag <tag>
+then push the new hotfix branch to git master using git push origin <tag-name>
+then merge the branch to your master
+So Now it is live UAT →UAT_HOTFIX_VX.X →MASTER ( To fix some functionality )
+Q. Why create a tag and fix it and then merge it to master ?
+Ans. As I said your client like my client may say to me that we want to make some minor changes to the previous code running in the master 
+but I don’t want all the feature which I have signed off in the current UAT , so you instead of selective commenting 
+or directly changing code in master can change the code in the past uat tag and create a branch and put your selective functionality their 
+and then merge the branch created of the particular tag to your master
