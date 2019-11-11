@@ -35,3 +35,9 @@ Semantic Versioning 2.0.0
 2 MAJOR version when you make incompatible changes,
 0 MINOR version when you add functionality in a backwards compatible manner, and
 0 PATCH version when you make backwards compatible bug fixes.
+
+Where to record version numbers
+A common place to record version numbers is in Git tags. You tag a version after committing the changes.
+Here are the basic steps. They assume you’ve already staged the changes.
+git commit -m "Short description of changes"
+git tag -a v0.2.0 -m "version 0.2.0"
