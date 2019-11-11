@@ -28,3 +28,10 @@ Ans. As I said your client like my client may say to me that we want to make som
 but I don’t want all the feature which I have signed off in the current UAT , so you instead of selective commenting 
 or directly changing code in master can change the code in the past uat tag and create a branch and put your selective functionality their 
 and then merge the branch created of the particular tag to your master
+
+
+Semantic Versioning 2.0.0
+
+2 MAJOR version when you make incompatible changes,
+0 MINOR version when you add functionality in a backwards compatible manner, and
+0 PATCH version when you make backwards compatible bug fixes.
