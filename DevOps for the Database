@@ -1,0 +1,1 @@
+DevOps to the database is to add or generate SQL scripts in the CI pipeline and deploy them during the CD.
